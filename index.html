@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>as207118</title>
+    <meta name="description" content="as207118 network information" />
+    <style>
+      html,
+      body * {
+        font-family: monospace;
+        font-weight: normal;
+        font-size: 11pt;
+        line-height: 1.25;
+        text-underline-offset: 0.15rem;
+        margin-top: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      html {
+        color-scheme: light dark;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html {
+          background-color: #111213;
+          color: #e0e0e0;
+        }
+      }
+
+      body {
+        max-width: min(90vw, 72ch);
+        margin: 5vw auto;
+      }
+
+      section,
+      nav,
+      hgroup:has(h1) {
+        margin-bottom: 2rem;
+      }
+
+      ul,
+      h2 {
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 0.5rem;
+      }
+
+      hgroup * {
+        margin-bottom: 0;
+      }
+
+      hgroup {
+        text-align: left;
+      }
+
+      h1 {
+        font-weight: bold;
+      }
+
+      hgroup p {
+        font-style: italic;
+      }
+
+      a,
+      a:visited {
+        color: inherit;
+        white-space: nowrap;
+        text-decoration: underline;
+      }
+
+      section > :not(h2) {
+        margin-left: 3ch;
+      }
+
+      ul li {
+        padding-left: 3ch;
+        position: relative;
+      }
+
+      ul li::before {
+        position: absolute;
+        left: 0;
+        content: "-";
+      }
+
+      .header-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-info">
+      <div>as207118</div>
+      <div style="text-align: right">
+        <a href="https://ripen.cc/2a14:6f44:f00d::/48">2a14:6f44:f00d::/48</a>
+      </div>
+    </div>
+
+    <main>
+      <section>
+        <h2 id="about">about</h2>
+        <p>
+          personal, <a href="https://codeberg.org/diogocastro/bird">open</a>-<a
+            href="https://codeberg.org/diogocastro/flake"
+            >source</a
+          >, research network
+        </p>
+      </section>
+
+      <section>
+        <h2 id="contact">contact</h2>
+        <p>
+          please contact
+          <a
+            href="https://apps.db.ripe.net/db-web-ui/lookup?source=RIPE&type=role&key=yike"
+            >the noc</a
+          >
+          for abuse of bad traffic
+        </p>
+        <p>
+          for peering requests, please see my contact information over at
+          <a href="https://diogocastro.net">my website</a>
+        </p>
+      </section>
+
+      <section>
+        <h2 id="peering">peering</h2>
+        <p>
+          i maintain an open peering policy, however the following requirements
+          apply:
+        </p>
+        <ul>
+          <li>must: maintain a valid peeringdb entry</li>
+          <li>must not: announce private asns or bogon prefixes</li>
+          <li>should: reply in under a week</li>
+          <li>should: only send traffic destined to my network</li>
+        </ul>
+        <p>
+          please consult
+          <a href="https://www.peeringdb.com/net/41252">peeringdb</a> for
+          up-to-date facility locations
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
