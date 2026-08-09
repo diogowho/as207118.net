@@ -1,0 +1,4 @@
+# prefix,country_code,region_code,city,zip
+
+2a14:6f44:10::/44,GB,GB-TWH,London,
+2a14:6f44:11::/48,CA,CA-ON,Toronto,
