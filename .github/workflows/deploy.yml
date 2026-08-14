@@ -1,0 +1,29 @@
+name: Deploy
+on:
+  push:
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.BUNNY_STORAGE_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.BUNNY_STORAGE_SECRET_ACCESS_KEY }}
+      AWS_REGION: uk
+      AWS_EC2_METADATA_DISABLED: "true"
+      BUNNY_STORAGE_BUCKET: ${{ secrets.BUNNY_STORAGE_BUCKET }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install AWS CLI
+        run: |
+          curl --fail --location --retry 3 \
+            https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip \
+            --output "$RUNNER_TEMP/awscliv2.zip"
+          unzip -q "$RUNNER_TEMP/awscliv2.zip" -d "$RUNNER_TEMP"
+          "$RUNNER_TEMP/aws/install" \
+            --bin-dir "$RUNNER_TEMP/bin" \
+            --install-dir "$RUNNER_TEMP/aws-cli"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+      - name: Upload site files
+        run: >-
+          aws s3 sync . "s3://${BUNNY_STORAGE_BUCKET}" --endpoint-url https://uk-s3.storage.bunnycdn.com --exclude '*' --include index.html --include '.well-known/*' --delete
